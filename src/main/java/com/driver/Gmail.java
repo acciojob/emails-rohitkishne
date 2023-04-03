@@ -30,7 +30,7 @@ public class Gmail extends Email {
             trash.add(mail);
             inbox.remove(mail);
         }
-        Mail mail = new Mail(new Date(), sender, message);
+        Mail mail = new Mail(date, sender, message);
         inbox.add(mail);
     }
 
@@ -43,6 +43,7 @@ public class Gmail extends Email {
             {
                 trash.add(mail);
                 inbox.remove(mail);
+                return;
             }
         }
     }

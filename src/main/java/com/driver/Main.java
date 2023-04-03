@@ -11,6 +11,8 @@ public class Main {
         email.changePassword("Acio@123", "V12@v");
         email.changePassword("Accio@123", "V12@v123");
 
+        System.out.println("Email Password is "+email.getPassword());
+
         Gmail gmail = new Gmail("accio@gmail.com", 3);
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "Assignment Completed?");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Tushar", "We are running out of time.");
