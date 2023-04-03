@@ -8,12 +8,14 @@ public class Gmail extends Email {
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
 
-    private List<Mail> inbox = new ArrayList<>();
-    private List<Mail> trash = new ArrayList<>();
+    private List<Mail> inbox;
+    private List<Mail> trash;
 
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity = inboxCapacity;
+        inbox = new ArrayList<>();
+        trash = new ArrayList<>();
     }
 
     public void receiveMail(Date date, String sender, String message){
@@ -41,7 +43,6 @@ public class Gmail extends Email {
             {
                 trash.add(mail);
                 inbox.remove(mail);
-                return;
             }
         }
     }
